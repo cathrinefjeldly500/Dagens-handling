@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dagens Handling</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #fff4e6, #ffe9b3);
+      font-family: sans-serif;
+      margin: 0;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+    button {
+      padding: 1em 1.5em;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 1em;
+      background-color: #ff9f1c;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:active {
+      background-color: #ffbf69;
+    }
+    .card {
+      margin-top: 2em;
+      background: white;
+      padding: 1em;
+      border-radius: 1em;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      font-size: 1.2em;
+      width: 100%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hva er dagens handling?</h1>
+  <button id="actionButton">Gi meg dagens handling</button>
+  <div class="card" id="actionCard" style="display: none;"></div>
+
+  <script>
+    const actions = [
+      "Stå opp når alarmen ringer",
+      "Drikk et glass vann med en gang du våkner",
+      "Skriv ned dagens dato i en notatbok",
+      "Rydd ett objekt på skrivebordet",
+      "Lag en stemning med lys i et rom",
+      "Gå uten telefon i lomma i 15 min",
+      "Ta et bilde av deg selv og si 'hei'",
+      "Flytt på møbler eller pynt",
+      "Skriv 3 tilfeldige ord og lag en setning",
+      "Gå som om du er superstjerna i en film",
+      "Si hei til en fremmed",
+      "Tegn dagens følelse som et monster",
+      "Sett en grense i tankene dine",
+      "Klem deg selv hardt i 5 sekunder",
+      "Lag en kopp te og drikk den sakte",
+      "Send en hyggelig melding til en venn",
+      "Gjør noe med vilje så sakte du klarer",
+      "Puss tennene ekstra nøye",
+      "Skriv en setning om noe du gleder deg til",
+      "Gjør noe du ikke føler deg klar for (litt)"
+    ];
+
+    document.getElementById("actionButton").addEventListener("click", function() {
+      const card = document.getElementById("actionCard");
+      const randomIndex = Math.floor(Math.random() * actions.length);
+      card.textContent = actions[randomIndex];
+      card.style.display = "block";
+    });
+  </script>
+</body>
+</html>
